@@ -728,7 +728,7 @@
    * This feature was designed for Delta's with very fast Z moves however higher speed cartesians may function
    * If the machine cannot raise the probe fast enough after a trigger, it may enter a fault state.
    */
-  //#define BLTOUCH_HS_MODE
+  #define BLTOUCH_HS_MODE
 
   // Safety: Enable voltage mode settings in the LCD menu.
   //#define BLTOUCH_LCD_VOLTAGE_MENU
@@ -2265,12 +2265,12 @@
 #if HAS_TRINAMIC_CONFIG
 
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
-  #define INTERPOLATE       false  // Interpolate X/Y/Z_MICROSTEPS to 256
+  #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #if AXIS_IS_TMC(X)
     #define X_CURRENT       1600        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT / 4  // (mA) RMS current for sensorless homing
-    #define X_MICROSTEPS     64    // 0..256
+    #define X_MICROSTEPS     16    // 0..256
     #define X_RSENSE          0.075
     #define X_CHAIN_POS      -1    // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
   #endif
@@ -2286,7 +2286,7 @@
   #if AXIS_IS_TMC(Y)
     #define Y_CURRENT       1600
     #define Y_CURRENT_HOME  Y_CURRENT / 4
-    #define Y_MICROSTEPS     64
+    #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.075
     #define Y_CHAIN_POS      -1
   #endif
@@ -2508,11 +2508,11 @@
    */
   #define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD     200  // [mm/s]
-  #define X2_HYBRID_THRESHOLD    200
-  #define Y_HYBRID_THRESHOLD     200
-  #define Y2_HYBRID_THRESHOLD    200
-  #define Z_HYBRID_THRESHOLD       3
+  #define X_HYBRID_THRESHOLD     210  // [mm/s]
+  #define X2_HYBRID_THRESHOLD    210
+  #define Y_HYBRID_THRESHOLD     210
+  #define Y2_HYBRID_THRESHOLD    210
+  #define Z_HYBRID_THRESHOLD       30
   #define Z2_HYBRID_THRESHOLD      3
   #define Z3_HYBRID_THRESHOLD      3
   #define Z4_HYBRID_THRESHOLD      3
