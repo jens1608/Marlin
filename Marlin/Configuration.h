@@ -415,7 +415,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 66
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -442,9 +442,9 @@
 //#define TEMP_SENSOR_1_AS_REDUNDANT
 #define MAX_REDUNDANT_TEMP_SENSOR_DIFF 10
 
-#define TEMP_RESIDENCY_TIME      2  // (seconds) Time to wait for hotend to "settle" in M109
-#define TEMP_WINDOW              6  // (°C) Temperature proximity for the "temperature reached" timer
-#define TEMP_HYSTERESIS          4  // (°C) Temperature proximity considered "close enough" to the target
+#define TEMP_RESIDENCY_TIME      5  // (seconds) Time to wait for hotend to "settle" in M109
+#define TEMP_WINDOW              2  // (°C) Temperature proximity for the "temperature reached" timer
+#define TEMP_HYSTERESIS          2  // (°C) Temperature proximity considered "close enough" to the target
 
 #define TEMP_BED_RESIDENCY_TIME 60  // (seconds) Time to wait for bed to "settle" in M190
 #define TEMP_BED_WINDOW          1  // (°C) Temperature proximity for the "temperature reached" timer
@@ -465,7 +465,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 275
+#define HEATER_0_MAXTEMP 380
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -499,9 +499,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp  23.44
+    #define DEFAULT_Ki   2.94
+    #define DEFAULT_Kd 46.66
   #endif
 #endif // PIDTEMP
 
